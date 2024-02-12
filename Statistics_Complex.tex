@@ -105,13 +105,44 @@
 \section{概率质量函数(Probability Mass Function, PMF)和概率密度函数(Probability Density Function, PDF)}
 \label{pmf-pdf}
 PMF是针对离散型随机变量而言，它详细列举了离散型随机变量取每一个值对应的概率的大小。而PDF是针对连续型随机变量而言的，对它的某个区间进行积分就能获得该随机变量落在该区间内的概率大小。
+\begin{figure}[ht]
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{Figures/BD_PMF.jpg}
+		\caption{Standard Normal Distribution PDF}
+	\label{fig:Bin_PMF}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{Figures/SND_PDF.jpg}
+		\caption{Standard Normal Distribution PDF}
+	\end{minipage}
+\end{figure}
+
 \section{累计分布函数(Cumulative Distribution Function, CDF)}
 \label{cdf}
 实际的数学计算中还是累计分布函数用得更多一些。它所描述的是某个随机变量落在小于某个具体数字的概率。对于一个随机变量$X$而言，$\mathrm{CDF}(c)=\mathrm{P}(X\leq c)$，故它一定是单调增、不小于零的。利用这个定义，要计算一个随机变量落在某个区间内的概率，只需要用两个CDF函数相减即可，免去了积分的麻烦。
 
 分布函数一定右连续。
+
+\newpage % To fit the following figure
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figures/SND_CDF.jpg}
+	\caption{Standard Normal Distribution CDF}
+	\label{fig:StNor_CDF}
+\end{figure}
+
 \section{分位数(Quantile)}
 分位数是CDF的反函数。CDF接收一个随机变量可能取的具体数字，给出随机变量取值小于这个数字的概率。但若已经知道一个概率值，想要知道随机变量的取值小于哪一个数字的概率等于这个概率值，这个数字便称作分位数。分位数在后文的假设检验中常常用到。
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figures/SND_quan.jpg}
+	\caption{Standard Normal Distribution Quantiles}
+	\label{fig:StNor_quan}
+\end{figure}
+
 \section{特征函数(Characteristic Function)}
 \label{characteristic-function}
 特征函数是用来描述一个随机变量的函数。虽然前文介绍的分布相关的函数对一个随机变量已经作了很好的描述，特征函数在作部分概率相关的证明时非常有用。对于一个随机变量$X$，它的特征函数是
@@ -668,20 +699,24 @@ $k\in\mathbb{Z}_+$，我们称
 在执行假设检验的过程中，导致弃真错误和取伪错误的概率同时存在，并且我们会希望这两个概率都尽量小，但是这两个概率是互斥的。也就是说，减小发生弃真错误概率的同时将会增大发生取伪错误的概率，反之亦然。一般情况下来说，为了解决这个问题，我们会将发生弃真错误的概率固定在一个较小的值，这是与前文中构造零假设和备择假设呼应的。然后我们在检验过程中进行控制，使得发生取伪错误的概率尽量小。\\
 \indent 此处给出几个概念：$\alpha$, $\beta$和$1-\beta$。第一个就是显著性水平，它是$P(\text{reject }H_0|H_0\text{ is true})$，即发生弃真错误的概率。而$\beta=P(\text{retain }H_0|H_0\text{ is false})$，即发生取伪错误的概率。$1-\beta$被称为\textbf{功效(Power)}，它是在给定显著性水平和样本大小的情况下，假设检验能够正确拒绝错误假设的概率。也就是说，Power表示了检验能够发现实际差异并拒绝虚假假设的能力大小，这可以通过公式$\beta=P(\text{reject }H_0|H_0\text{ is false})$看出。Power越高，说明检验的能力越强，更容易发现实际存在的差异。通常，我们希望检验的Power越高越好，一般认为Power大于0.8时可以接受。
 \subsection{样本大小(Sample Size)}
-样本大小会显著影响$\alpha$和$\beta$的取值，也就是说样本大小越大，我们就能获得越高的功效。在样本量不变的情况下，$\alpha$和$1-\beta$是正相关的，但是我们希望$\alpha$尽量小，$1-\beta$尽量大。为了解决这个问题，我们可以通过增加样本大小来改变二者的关联关系，尽管它们仍然是正相关的，但是可以将二者都控制在一个合理的范围。Figure 1. 解释了前者，Figure 2. 解释了后者。在Figure 2. 中，下图较上图的标准误差更小，因为两个分布都更加集中。标准误差SE$=\displaystyle\frac{\sigma}{\sqrt{n}}$，所以一个简单的减小标准误差的方法就是增大样本量。
+样本大小会显著影响$\alpha$和$\beta$的取值，也就是说样本大小越大，我们就能获得越高的功效。在样本量不变的情况下，$\alpha$和$1-\beta$是正相关的，但是我们希望$\alpha$尽量小，$1-\beta$尽量大。为了解决这个问题，我们可以通过增加样本大小来改变二者的关联关系，尽管它们仍然是正相关的，但是可以将二者都控制在一个合理的范围。\ref{fig:Power_alpha_beta} 解释了前者，\ref{fig:Power_SE} 解释了后者。在Figure 2. 中，下图较上图的标准误差更小，因为两个分布都更加集中。标准误差SE$=\displaystyle\frac{\sigma}{\sqrt{n}}$，所以一个简单的减小标准误差的方法就是增大样本量。
+
+% Fix the figure label to make it easy to change
 
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.45\textwidth}
         \centering
-        \includegraphics[width = \textwidth]{Figure 1.png} % first figure itself
-        \caption{\textbf{Figure 1.}\ $\alpha$，$\beta$，与Power的关系}
+        \includegraphics[width = \textwidth]{Figures/Figure 1.png} % first figure itself
+        \caption{$\alpha$，$\beta$，与Power的关系}
+		\label{fig:Power_alpha_beta}
     \end{minipage}
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
-        \includegraphics[width = \textwidth]{Figure 2.png} % second figure itself
-        \caption{\textbf{Figure 2.} 标准差大小不同对它们关系产生的影响}
+        \includegraphics[width = \textwidth]{Figures/Figure 2.png} % second figure itself
+        \caption{标准差大小不同对它们关系产生的影响}
+		\label{fig:Power_SE}
     \end{minipage}
 \end{figure}
 
