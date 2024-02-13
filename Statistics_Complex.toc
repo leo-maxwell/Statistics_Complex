@@ -1,0 +1,117 @@
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}随机变量(Random Variable, RV)}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}连续(Continuous)或离散(Discrete)}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}分布介绍 What is Distribution}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}期望(Mean)}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}方差(Variance)与标准差(Standard Deviation)}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Markov不等式(Markov's Inequality)}{8}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Chebyshev不等式(Chebyshev's Inequality)}{8}{section.1.6}%
+\contentsline {section}{\numberline {1.7}依概率收敛(Convergence in Probability)}{8}{section.1.7}%
+\contentsline {section}{\numberline {1.8}几乎必然收敛(Almost Sure Convergence)}{8}{section.1.8}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}分布(Distribution)}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}概率质量函数(Probability Mass Function, PMF)和概率密度函数(Probability Density Function, PDF)}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}累计分布函数(Cumulative Distribution Function, CDF)}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}分位数(Quantile)}{10}{section.2.3}%
+\contentsline {section}{\numberline {2.4}特征函数(Characteristic Function)}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.5}常见分布 Common Distributions}{11}{section.2.5}%
+\contentsline {section}{\numberline {2.6}人造的分布 Artificial Distributions}{11}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}卡方分布(Chi-Square Distribution)}{11}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}学生T分布(Student T Distribution)}{11}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}F分布(F Distribution)}{12}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}分布族 Distribution Family}{12}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}指数型分布族 Exponential Family}{12}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Pitman-Koopman定理}{12}{subsection.2.7.2}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}样本(Sample)与总体(Population)}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}总体和样本的数学结构 Mathematical Structure of Population and Sample}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}得到有效的样本 Obtaining Valid Sample}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}统计量和估计量 Statistics and Estimators}{13}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}次序统计量(Order Statistics)}{14}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}样本极值(Sample Extremum)}{14}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}样本极差(Sample Range)}{14}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}样本中位数(Sample Median)}{14}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}样本$p$分位数(Sample $p$th Quantile)}{14}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}样本分布 Sample Distribution}{14}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}联合分布(Joint Distribution)}{14}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}经验分布(Empirical Distribution)}{14}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}抽样分布(Sampling Distribution)}{15}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}精确分布(Exact Distribution)}{15}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}渐进分布(Asymptotic Distribution)}{15}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}近似分布(Approximate Distribution)}{15}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}充分统计量(Sufficient Statistics)}{15}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}充分统计量的性质}{15}{subsection.3.6.1}%
+\contentsline {section}{\numberline {3.7}因子分解定理 Factorization Theorem}{16}{section.3.7}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}点估计 Pointwise Estimate}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}估计方法 Estimation Methods}{17}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}矩估计 Method of Matching Moments}{17}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}最大似然估计 Maximum Likelihood Estimation, MLE}{17}{subsection.4.1.2}%
+\contentsline {subsubsection}{最大似然估计给出的其他概念 Concepts in MLE}{17}{subsubsection*.3}%
+\contentsline {subsection}{\numberline {4.1.3}估计量的不变性 Invariance of Statistics}{17}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}点估计的评价标准 Criteria about Pointwise Estimate}{18}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}大样本评价标准 Criteria for Large Samples}{18}{subsection.4.2.1}%
+\contentsline {subsubsection}{相合性 Consistency}{18}{subsubsection*.4}%
+\contentsline {subsubsection}{渐进正态性 Asymptotic Normality}{18}{subsubsection*.5}%
+\contentsline {subsection}{\numberline {4.2.2}小样本评价标准 Criteria for Small Samples}{18}{subsection.4.2.2}%
+\contentsline {subsubsection}{偏差(Bias)}{18}{subsubsection*.6}%
+\contentsline {subsubsection}{有效性(Efficiency)}{18}{subsubsection*.7}%
+\contentsline {subsubsection}{均方差(Mean Squared Error, MSE)}{19}{subsubsection*.8}%
+\contentsline {subsubsection}{总结 Conclusion}{19}{subsubsection*.9}%
+\contentsline {section}{\numberline {4.3}最小方差无偏估计(Minimum Variance Unbiased Estimator, MVUE)}{19}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Cramér-Rao不等式(Cramér-Rao Inequality)}{19}{subsection.4.3.1}%
+\contentsline {subsubsection}{Cramér-Rao正则条件下估计的效率 Efficiency under Cramér-Rao Regularity Conditions}{19}{subsubsection*.10}%
+\contentsline {subsection}{\numberline {4.3.2}零的无偏估计法 Unbiased Estimator of Zero}{20}{subsection.4.3.2}%
+\contentsline {subsubsection}{MVUE与零偏估计 MVUE and Unbiased Estimator of Zero}{20}{subsubsection*.11}%
+\contentsline {section}{\numberline {4.4}一般随机样本估计量 Estimators of General Random Sample}{20}{section.4.4}%
+\contentsline {subsubsection}{次序统计量(Order Statistics)}{20}{subsubsection*.12}%
+\contentsline {subsubsection}{分位数(Quantile)}{20}{subsubsection*.13}%
+\contentsline {subsubsection}{样本均值(Mean)}{21}{subsubsection*.14}%
+\contentsline {subsubsection}{样本方差(Variance)}{21}{subsubsection*.15}%
+\contentsline {subsubsection}{样本标准差(Standard Error)}{21}{subsubsection*.16}%
+\contentsline {subsubsection}{样本矩(Sample Moments)}{21}{subsubsection*.17}%
+\contentsline {subsubsection}{样本偏度(Skewness)}{21}{subsubsection*.18}%
+\contentsline {subsubsection}{样本峰度(Kurtosis)}{22}{subsubsection*.19}%
+\contentsline {subsubsection}{线性估计量(Linear Estimator)}{22}{subsubsection*.20}%
+\contentsline {subsubsection}{最优线性无偏估计量(Best Linear Unbiased Estimator)}{22}{subsubsection*.21}%
+\contentsline {subsubsection}{随机样本和T分布}{22}{subsubsection*.22}%
+\contentsline {section}{\numberline {4.5}正态随机样本估计量 Estimators of Normal Random Sample}{22}{section.4.5}%
+\contentsline {subsubsection}{样本均值}{23}{subsubsection*.23}%
+\contentsline {subsubsection}{样本方差}{23}{subsubsection*.24}%
+\contentsline {subsubsection}{样本均值和方差的关系}{23}{subsubsection*.25}%
+\contentsline {subsubsection}{两个不同正态样本的关系}{23}{subsubsection*.26}%
+\contentsline {subsubsection}{线性估计量}{23}{subsubsection*.27}%
+\contentsline {subsection}{\numberline {4.5.1}大数定律(Law of Large Numbers, LLN)}{24}{subsection.4.5.1}%
+\contentsline {subsubsection}{弱大数定律(Weak Law of Large Numbers, WLLN)}{24}{subsubsection*.28}%
+\contentsline {subsubsection}{强大数定律(Strong Law of Large Numbers, SLLN)}{24}{subsubsection*.29}%
+\contentsline {subsection}{\numberline {4.5.2}中心极限定理(Central Limit Theorem, CLT)}{24}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Glivenko-Cantelli定理(Glivenko-Cantelli Theorem)}{24}{subsection.4.5.3}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}假设检验(Hypothesis Test)}{25}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}显著性水平(Significance Level)}{25}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}弃真错误(Type I Error)与取伪错误(Type II Error)}{25}{subsection.5.0.2}%
+\contentsline {subsection}{\numberline {5.0.3}样本大小(Sample Size)}{26}{subsection.5.0.3}%
+\contentsline {subsection}{\numberline {5.0.4}p-value}{27}{subsection.5.0.4}%
+\contentsline {subsection}{\numberline {5.0.5}检验统计量(Test Statistic, Z)}{27}{subsection.5.0.5}%
+\contentsline {subsection}{\numberline {5.0.6}标准误差(Standard Error, SE)}{27}{subsection.5.0.6}%
+\contentsline {subsection}{\numberline {5.0.7}置信水平(Confidence Level)和置信区间(Confidence Interval,CI)}{27}{subsection.5.0.7}%
+\contentsline {subsection}{\numberline {5.0.8}理解显著性水平和置信水平的区别}{28}{subsection.5.0.8}%
+\contentsline {subsection}{\numberline {5.0.9}补充定义}{31}{subsection.5.0.9}%
+\contentsline {subsubsection}{极限集}{31}{subsubsection*.32}%
+\contentsline {subsubsection}{泰勒公式}{31}{subsubsection*.33}%
+\contentsline {subsubsection}{Borel-Cantelli引理}{31}{subsubsection*.34}%
+\contentsline {subsection}{\numberline {5.0.10}正文证明}{32}{subsection.5.0.10}%
+\contentsline {subsubsection}{Markov不等式}{32}{subsubsection*.35}%
+\contentsline {subsubsection}{Chebyshev不等式}{32}{subsubsection*.36}%
+\contentsline {subsubsection}{弱大数定律}{32}{subsubsection*.37}%
+\contentsline {subsubsection}{强大数定律}{33}{subsubsection*.38}%
+\contentsline {subsubsection}{中心极限定理}{34}{subsubsection*.39}%
+\contentsline {subsubsection}{均方差和方差、偏差的关系}{34}{subsubsection*.40}%
+\contentsline {subsubsection}{线性估计量的期望与方差}{34}{subsubsection*.41}%
+\contentsline {subsubsection}{线性无偏估计量估计均值的性质}{35}{subsubsection*.42}%
+\contentsline {subsubsection}{最优线性无偏估计量}{35}{subsubsection*.43}%
+\contentsline {subsubsection}{线性估计量的正态性}{35}{subsubsection*.44}%
+\contentsline {subsubsection}{标准化正态分布随机变量}{36}{subsubsection*.45}%
+\contentsline {subsubsection}{置信区间证明1}{36}{subsubsection*.46}%
+\contentsline {subsubsection}{样本方差和期望证明}{37}{subsubsection*.47}%
+\contentsline {subsubsection}{任意分布中的任意随机样本的均值的渐进分布都是正态分布}{38}{subsubsection*.48}%
+\contentsline {subsubsection}{随机样本方差推测}{38}{subsubsection*.49}%
+\contentsline {subsubsection}{随机样本的标准差不是总体标准差的无偏估计}{38}{subsubsection*.50}%
+\contentsline {subsubsection}{随机样本方差推测的分布}{39}{subsubsection*.51}%
+\contentsline {subsubsection}{满足T分布证明}{41}{subsubsection*.52}%
+\contentsline {subsubsection}{Glivenko-Cantelli定理}{41}{subsubsection*.53}%
