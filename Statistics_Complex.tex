@@ -72,6 +72,45 @@
 \end{align*}
 
 标准差是方差的算术平方根，常常简记为$\sigma$.
+
+
+\section{协方差(Covariance)}
+在概率论和统计学中，协方差用于衡量两个变量的总体误差。而方差是协方差的一种特殊情况，即当两个变量是相同的情况。
+期望值分别为$E[X]$与$E[Y]$的两个实随机变量$X$与$Y$之间的协方差$Cov(X,Y)$定义为：
+\begin{align*}
+	Cov(X,Y)\;&=E[(X-E[X])(Y-E[Y])]\\
+			  &=E[XY]-2E[Y]E[X]+E[X]E[Y]\\
+			  &=E[XY]-E[X]E[Y]
+\end{align*}
+
+下面阐述协方差的一些关系和性质：
+
+若两个随机变量X和Y相互独立，则$E[(X-E(X))(Y-E(Y))]=0$，因而若上述数学期望不为零，则$X$和$Y$必不是相互独立的，亦即它们之间存在着一定的关系。
+
+协方差与方差之间有如下关系：
+\begin{align*}
+	D(X+Y)=D(X)+D(Y)+2Cov(X,Y)\\
+	D(X-Y)=D(X)+D(Y)-2Cov(X,Y)
+\end{align*}
+
+协方差与期望值有如下关系：
+\begin{align*}
+	Cov(X,Y)=E(XY)-E(X)E(Y)
+\end{align*}
+
+协方差的性质：
+
+\begin{itemize}
+	\centering
+	\item $Cov(X,Y)=Cov(Y,X);$(对称性)
+	\item $Cov(aX,bY)=abCov(X,Y),(a,b\in \mathbb{C});$(线性)
+	\item $Cov(X_1+X_2,Y)=Cov(X_1,Y)+Cov(X_2,Y)$
+	\item $Cov(X+a,Y+b)=Cov(X,Y)$
+	\item $Cov(X,X)=Var(X)$(零自协方差)
+\end{itemize}
+
+
+
 \section{Markov不等式(Markov's Inequality)}
 \label{markov-inequality}
 对于非负随机变量$X$和$a\in(0,+\infty)$，则：（证明见\ref{markov-inequality-proof}）
