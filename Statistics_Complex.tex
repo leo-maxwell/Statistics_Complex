@@ -937,7 +937,7 @@ $(1-\alpha)\times 100\%$称为\textbf{置信水平}。容易理解的是，置�
 	\mathrm{Cov}(X+a,Y+b)&=\mathrm E[(X+a)(Y+b)]-\mathrm E[X+a]\mathrm E[Y+b] \\
 	&=\mathrm E[XY+aY+bX+ab]-(\mathrm E[X]+a)(\mathrm E[Y]+b) \\
 	&=\mathrm E[XY]+a\mathrm E[Y]+b\mathrm E[X]+b-\mathrm E[X]\mathrm E[Y]-a\mathrm E[Y]-b\mathrm E[X]-ab \\
-	&=\mathrm E[XY]-\mathrm E[X]\mathrm E[Y]
+	&=\mathrm E[XY]-\mathrm E[X]\mathrm E[Y] \\
 	&=\mathrm{Cov}(X, Y)
 \end{align*}
 
@@ -945,7 +945,8 @@ $(1-\alpha)\times 100\%$称为\textbf{置信水平}。容易理解的是，置�
 \begin{align*}
 	\mathrm{Cov}(aX+bY,cW+dV)&=\mathrm E[(aX+bY)(cW+dV)]-\mathrm E[aX+bY]\mathrm E[cW+dV] \\
 	&=\mathrm E[acXW+adXV+bcYW+bdYV]-(a\mathrm E[X]+b\mathrm E[Y])(c\mathrm E[W]+d\mathrm E[V]) \\
-	&=ac\mathrm E[XW]+ad\mathrm E[XV]+bc\mathrm E[YW]+bd\mathrm E[YV]-ac\mathrm E[X]\mathrm E[W]-ad\mathrm E[X]\mathrm E[V]-bc\mathrm E[Y]\mathrm E[W]-bd\mathrm E[Y]\mathrm E[V] \\
+	&=ac\mathrm E[XW]+ad\mathrm E[XV]+bc\mathrm E[YW]+bd\mathrm E[YV]- \\
+	&ac\mathrm E[X]\mathrm E[W]-ad\mathrm E[X]\mathrm E[V]-bc\mathrm E[Y]\mathrm E[W]-bd\mathrm E[Y]\mathrm E[V] \\
 	&=ac\mathrm{Cov}(X, W)+ad\mathrm{Cov}(X, V)+bc\mathrm{Cov}(Y, W)+bd\mathrm{Cov}(Y, V)
 \end{align*}
 
