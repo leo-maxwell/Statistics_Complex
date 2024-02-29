@@ -10,7 +10,6 @@ Use at your own risk. The project is highly crude at this stage.
 
 # Todo-list
 - [ ] 英语版本的文档 English version of the book
-- [ ] 合并统计建模内容 The merge of the statistics modeling contents
 - [ ] 矩估计 Method of Matching Moments
 - [ ] Rao-Blackwell Theorem
 - [ ] Lehman-Sheffé Theorem
