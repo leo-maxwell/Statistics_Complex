@@ -117,7 +117,7 @@ PMF是针对离散型随机变量而言的，它详细列举了离散型随机�
 	\item [常数之期望为其本身：]
 	对任意常数$c$，都有$\mathrm E[c]=c$.
 	\item [期望是线性函数：]
-	$\forall a,b\in\mathbb{R}$，都有$\mathrm E[aX+bY]=a\mathrm E[X]+b\mathrm E[Y]$
+	$\forall a_i\in\mathbb{R}$，都有$\mathrm E[\sum_{i=1}^na_iX_i]=\sum_{i=1}^na_i\mathrm E[X_i]$
 	\item [两个随机变量的积的期望：]
 	对两个随机变量$X$和$Y$而言，有$\mathrm E[XY]=\mathrm E[X]\mathrm E[Y]+\mathrm{Cov}(X,Y)$，其中$\mathrm{Cov}(X,Y)$是它们的协方差。协方差的定义在后文给出。
 \end{description}
@@ -154,8 +154,10 @@ PMF是针对离散型随机变量而言的，它详细列举了离散型随机�
 	$\mathrm{Var}(X+a)=\mathrm{Var}(X)$
 	\item [伸缩后的随机变量离散程度增加：]
 	$\mathrm{Var}(aX)=a^2\mathrm{Var}(X)$
-	\item [多个随机变量的方差：]
+	\item [多个随机变量的线性组合的方差：]
 	$\mathrm{Var}\left(\sum_{i=1}^na_iX_i\right)=\sum_{i,j}^na_ia_j\mathrm{Cov}(X_i,X_j)$
+	\item [多个两两相互独立的随机变量的积的方差：]
+	$\mathrm{Var}\left(\prod_{i=1}^nX_i\right)=\prod_{i=1}^n\mathrm{Var}(X_i)+\sum_{i=1}^n\mathrm{Var}(X_i)\sum_{\substack{j=1\\ j\neq i}}^n(\mathrm E[X_j]^2)$
 \end{description}
 \section{协方差(Covariance)}
 \label{covariance}
@@ -180,23 +182,37 @@ PMF是针对离散型随机变量而言的，它详细列举了离散型随机�
 	$\mathrm{Cov}(aX, bY)=ab\mathrm{Cov}(X, Y)$
 	\item [随机变量的平移不影响协方差：]
 	$\mathrm{Cov}(X+a, Y+b)=\mathrm{Cov}(X, Y)$
-	\item [多个随机变量的协方差：]
-	$\mathrm{Cov}(aX+bY, cW+dV)=ac\mathrm{Cov}(X, W)+ad\mathrm{Cov}(X, V)+bc\mathrm{Cov}(Y, W)+bd\mathrm{Cov}(Y, V)$
+	\item [多个随机变量的线性组合的协方差：]
+	$\mathrm{Cov}(\sum_{i=1}^na_iX_i, \sum_{j=1}^mb_jY_j)=\sum_{i=1}^n\sum_{j=1}^ma_ib_j\mathrm{Cov}(X_i, Y_j)$
 \end{description}
-\section{Markov不等式(Markov's Inequality)}
+\section{统计不等式 Statistical Inequation}
+\subsection{Markov不等式(Markov's Inequality)}
 \label{markov-inequality}
 对于非负随机变量$X$和$a\in(0,+\infty)$，则：（证明见\ref{markov-inequality-proof}）
 \[
 	P(X>a)\leq\frac{\mathrm E[X]}{a}
 \]
 
-\section{Chebyshev不等式(Chebyshev's Inequality)}
+\subsection{Chebyshev不等式(Chebyshev's Inequality)}
 \label{chebyshev-inequality}
 对于存在有限期望值$\mu$和有界非零方差$\sigma^2$的随机变量$X$以及任意$k\in(0,+\infty)$，有：（证明见\ref{chebyshev-inequality-proof}）
 \[
 	P(|X-\mu|\geq k\sigma)\leq\frac{1}{k^2}
 \]
-\section{依概率收敛(Convergence in Probability)}
+\subsection{Cauchy-Schwarz不等式的统计学应用 Statistical C.S. Inequality}
+\label{thm:statistical-cs-ineq}
+对于两个随机变量$X,Y$，设它们的期望分别是$\mu, \eta$，则有：
+\[
+	\mathrm E[(X-\mu)(Y-\eta)]\leq\mathrm E[(X-\mu)^2]\mathrm E[(Y-\eta)^2]
+\]
+
+更一般地，有：（证明见\ref{proof:statistical-cs-ineq}）
+\[
+	\mathrm E[XY]\leq\mathrm E[X^2]\mathrm E[Y^2]
+\]
+
+\section{概率意义下的收敛 Statistical Convergence}
+\subsection{依概率收敛(Convergence in Probability)}
 \label{convg-in-prob}
 取一个随机变量构成的序列$X_1,X_2,X_3,\dots,X_n$，再取一个随机变量$X$。若$\forall\varepsilon>0$，都有：
 \[
@@ -204,7 +220,7 @@ PMF是针对离散型随机变量而言的，它详细列举了离散型随机�
 \]
 
 则称这列随机变量依概率收敛到$X$，记作$X_n\xrightarrow[n\to+\infty]{P}X$.
-\section{几乎必然收敛(Almost Sure Convergence)}
+\subsection{几乎必然收敛(Almost Sure Convergence)}
 取一个随机变量构成的序列$X_1,X_2,X_3,\dots,X_n$，再取一个随机变量$X$。若：
 \[
 	P(\lim_{n\to+\infty}X_n=X)=1
@@ -714,12 +730,10 @@ $k\in\mathbb{Z}_+$，我们称
 
 \subsection{中心极限定理(Central Limit Theorem, CLT)}
 \label{CLT}
-不管是从什么类型的分布中取的样本，只要样本足够大，则样本的平均值一定服从正态分布$N(\mu,\frac{\sigma^2}{n})$，其中$\mu$是总体的平均值，$n$是样本大小,$\sigma$是总体标准差（当总体标准差未知时，用样本标准差代替）。所以在许多情况下，我们对样本的平均值进行统计分析时，都直接认为其符合正态分布。
-
-中心极限定理仅仅在样本数量很大的时候才生效。中心极限定理的证明见\ref{CLT-proof}
+不管是从符合什么类型分布的总体中取的样本，只要样本足够大，则样本的平均值一定服从正态分布$N(\mu,\frac{\sigma^2}{n})$，其中$\mu$是总体的平均值，$n$是样本大小,$\sigma$是总体标准差（当总体标准差未知时，用样本标准差代替）。所以在许多情况下，我们对样本的平均值进行统计上的分析时，都直接认为其符合正态分布。该定理仅仅在样本数量很大的时候才生效，其证明见\ref{CLT-proof}。
 \subsection{Glivenko-Cantelli定理(Glivenko-Cantelli Theorem)}
 \label{glivenko-cantelli-theorem}
-该定理表明，当$n$充分大时，经验分布函数的任意一个观察值$F_n(x)$几乎必然收敛到总体分布函数$F(x)$，即（证明见\ref{glivenko-cantelli-proof}）
+该定理表明，当$n$充分大时，经验分布函数的任意一个观察值$F_n(x)$几乎必然收敛到总体分布函数$F(x)$，即（证明见\ref{proof:glivenko-cantelli}）
 \[
 	P\left(\lim_{n\to+\infty}\sup_{x\in\mathbb{R}}|F_n(x)-F(x)|=0\right)=1
 \]
@@ -887,6 +901,7 @@ $(1-\alpha)\times 100\%$称为\textbf{置信水平}。容易理解的是，置�
 	&=a\iint_{\mathbb{R}}xf_{X}(x)\mathrm dxy+b\iint_{\mathbb{R}}yf_{Y}(y)\mathrm dxy \\
 	&=a\mathrm E[X]+b\mathrm E[Y]
 \end{align*}
+该证明同样对多个随机变量的情形生效。
 
 根据协方差的定义（\ref{covariance}），有以下证明：
 \begin{align*}
@@ -898,7 +913,6 @@ $(1-\alpha)\times 100\%$称为\textbf{置信水平}。容易理解的是，置�
 所以有$\mathrm E[XY]=\mathrm E[X]\mathrm E[Y]+\mathrm{Cov}(X,Y)$，所有性质证毕。
 \subsection{无意识统计学家法则}
 \label{LUTOS-proof}
-
 给出对\autoref{theorem:LUTOS}的证明：
 \subsubsection{离散情形}
 $X$是随机变量，可以取$n$个值，即$x_1,x_2,x_3,\dots,x_n$，，并且其对应的PMF是$f_X$. 有一函数$g$将$X$映成$m$个值。记$g(X)=Y$，则有$y_1,y_2,y_3,\dots,y_m$，容易知道$m\leq n$. 令$f_Y$是$Y$的PMF. 然后有：
@@ -1010,6 +1024,14 @@ $X$是随机变量，可以取$n$个值，即$x_1,x_2,x_3,\dots,x_n$，，并且
 	&=\sum_{i=1}^na_i^2\mathrm{Var}(X_i)+2\sum_{i=1}^n\sum_{j>i}^na_ia_j\mathrm{Cov}(X_i,X_j)
 \end{align*}
 
+多个两两相互独立的随机变量的积的方差：
+\begin{align*}
+	\mathrm{Var}\left(\prod_{i=1}^nX_i\right)&=\mathrm E\left[\left(\prod_{i=1}^nX_i\right)^2\right]-\left(\mathrm E\left[\prod_{i=1}^nX_i\right]\right)^2 \\
+	&=\prod_{i=1}^n\mathrm E[X_i^2]-\prod_{i=1}^n(\mathrm E[X_i])^2 \\
+	&=\prod_{i=1}^n(\mathrm{Var}(X_i)+(\mathrm E[X_i])^2)-\prod_{i=1}^n(\mathrm E[X_i])^2 \\
+	&=\prod_{i=1}^n\mathrm{Var}(X_i)+\sum_{i=1}^n\mathrm{Var}(X_i)\sum_{\substack{j=1\\ j\neq i}}^n(\mathrm E[X_j]^2)
+\end{align*}
+
 所有性质证毕。
 \subsection{协方差的性质}
 \label{covariance-proof}
@@ -1043,13 +1065,11 @@ $X$是随机变量，可以取$n$个值，即$x_1,x_2,x_3,\dots,x_n$，，并且
 	&=\mathrm{Cov}(X, Y)
 \end{align*}
 
-多个随机变量$X,Y,W,V$的协方差：
+多个随机变量的线性组合的协方差：
 \begin{align*}
-	\mathrm{Cov}(aX+bY,cW+dV)&=\mathrm E[(aX+bY)(cW+dV)]-\mathrm E[aX+bY]\mathrm E[cW+dV] \\
-	&=\mathrm E[acXW+adXV+bcYW+bdYV]-(a\mathrm E[X]+b\mathrm E[Y])(c\mathrm E[W]+d\mathrm E[V]) \\
-	&=ac\mathrm E[XW]+ad\mathrm E[XV]+bc\mathrm E[YW]+bd\mathrm E[YV]- \\
-	&ac\mathrm E[X]\mathrm E[W]-ad\mathrm E[X]\mathrm E[V]-bc\mathrm E[Y]\mathrm E[W]-bd\mathrm E[Y]\mathrm E[V] \\
-	&=ac\mathrm{Cov}(X, W)+ad\mathrm{Cov}(X, V)+bc\mathrm{Cov}(Y, W)+bd\mathrm{Cov}(Y, V)
+	\mathrm{Cov}(\sum_{i=1}^na_iX_i, \sum_{j=1}^mb_jY_j)&=\mathrm E[\sum_{i=1}^na_iX_i\sum_{j=1}^mb_jY_j]-\mathrm E[\sum_{i=1}^na_iX_i]\mathrm E[\sum_{j=1}^mb_jY_j] \\
+	&=\sum_{i=1}^n\sum_{j=1}^ma_ib_j\mathrm E[X_iY_j]-\sum_{i=1}^n\sum_{j=1}^ma_ib_j\mathrm E[X_i]\mathrm E[Y_j] \\
+	&=\sum_{i=1}^n\sum_{j=1}^ma_ib_j\mathrm{Cov}(X_i,X_j)
 \end{align*}
 
 所有性质证毕。
@@ -1086,6 +1106,28 @@ $X$是随机变量，可以取$n$个值，即$x_1,x_2,x_3,\dots,x_n$，，并且
 	&=\frac{\sigma^2}{k^2\sigma^2} &\text{根据方差定义} \\
 	&=\frac{1}{k^2}
 \end{align*}
+
+证毕。
+
+\subsection{Cauchy-Schwarz不等式的概率推广}
+\label{proof:statistical-cs-ineq}
+首先我们证明对任意随机变量$X,Y,Z$，定义内积$\langle X,Y\rangle=\mathrm E[XY]$后，它成为一个有效的内积空间：
+
+\begin{description}
+	\item [共轭对称性：] $\mathrm E[XY]=\overline{\mathrm E[YX]}$，它是显然地，因为此处的随机变量都是实的。
+	\item [首元素线性：] $\langle aX+bY, Z\rangle=\mathrm E[(aX+bY)Z]=a\mathrm E[XZ]+b\mathrm E[YZ]=a\langle X, Z\rangle+b\langle Y,Z\rangle$，证毕。
+	\item [非负性：] $\langle X, X\rangle=\mathrm E[X^2]>0$，这是显然地。
+\end{description}
+
+所以该内积定义构成一个有效的内积空间，成立Cauchy-Schwarz不等式：
+\[
+	|\langle X,Y\rangle|^2\leq\langle X, X\rangle\cdot\langle Y, Y\rangle
+\]
+
+将定义的内积代入后，有：
+\[
+	\mathrm E[XY]\leq\sqrt{\mathrm E[X^2]\mathrm E[Y^2]}
+\]
 
 证毕。
 
@@ -1186,6 +1228,35 @@ $X$是随机变量，可以取$n$个值，即$x_1,x_2,x_3,\dots,x_n$，，并且
 \]
 
 根据泰勒公式（\ref{taylors-theorem}）
+
+\subsection{Glivenko-Cantelli定理}
+\label{proof:glivenko-cantelli}
+我们先证明以下引理：
+
+\subsubsection{引理1}
+
+对任意给定的定义在$\mathbb{R}$上的分布函数$F$，我们说，对任意给定的$\varepsilon>0$，都存在一个有限的分割$-\infty<t_0<t_1<t_2<\cdots<t_k=+\infty$，使得对任意$j\in[0,k-1]\cup\mathbb{Z}$，有
+\[
+	F(t_{j+1}^-)-F(t_j)\leq\varepsilon
+\]
+
+\noindent\textbf{证明}
+
+对一个给定的$\varepsilon$，令$t_0=-\infty$，对$j\geq0\in\mathbb{Z}$，定义
+\[
+	t_{j+1}=\sup\{z:F(z)\leq F(t_j)+\varepsilon\}
+\]
+
+我们希望证明结论$F(t_{j+1})\geq F(t_j)+\varepsilon$. 假设$F(t_{j+1})< F(t_j)+\varepsilon$，因为分布函数$F$的右连续性质（\ref{cdf}），所以$\exists\delta>0,F(t_{j+1}+\delta)<F_j+\varepsilon$，显然这和定义冲突。
+
+所以我们说明了在$t_{j}$和$t_{j+1}$之间，函数$F$的值至少跳跃$\varepsilon$. 由于我们限定了一个有限的$k$，所以该过程最多能够发生有限次，于是我们得到一个符合定义形式的分割。
+
+接下来证明$F(t_{j+1}^-)-F(t_j)\leq\varepsilon$. 注意到根据$t_{j+1}$的定义，$\forall\sigma>0,F(t_{j+1}-\sigma)<F(t_j)+\varepsilon$，该陈述符合$F(t^-_{j+1})$的定义，证毕。
+
+\subsubsection{主要证明}
+
+对一列次序统计量$Y_{(1)},Y_{(2)},Y_{(3)},\dots,Y_{(n)}$以及其对应的经验分布函数$F_n(x)$和真实的总体分布函数$F(x)$，不妨设
+
 \subsection{均方差和方差、偏差的关系}
 \label{proof1}
 方法一：
@@ -1443,34 +1514,6 @@ $X$是随机变量，可以取$n$个值，即$x_1,x_2,x_3,\dots,x_n$，，并且
 \end{align*}
 
 其中，根据附录\ref{proof6}中的证明，我们知道分式上半部分满足标准正态分布；根据附录\ref{proof11}，我们知道分式下半部分中$\frac{S^2(n-1)}{\sigma^2}$满足自由度为$n-1$的卡方分布$\chi_{n-1}^2$，根据T分布的定义\ref{t definition}，我们知道$T$满足自由度为$n-1$的T分布，证毕。
-
-\subsection{Glivenko-Cantelli定理}
-\label{glivenko-cantelli-proof}
-我们先证明以下引理：
-
-\noindent\textbf{引理1}
-
-对任意给定的定义在$\mathbb{R}$上的分布函数$F$，我们说，对任意给定的$\varepsilon>0$，都存在一个有限的分割$-\infty<t_0<t_1<t_2<\cdots<t_k=+\infty$，使得对任意$j\in[0,k-1]\cup\mathbb{Z}$，有
-\[
-	F(t_{j+1}^-)-F(t_j)\leq\varepsilon
-\]
-
-\noindent\textbf{引理1证明}
-
-对一个给定的$\varepsilon$，令$t_0=-\infty$，对$j\geq0\in\mathbb{Z}$，定义
-\[
-	t_{j+1}=\sup\{z:F(z)\leq F(t_j)+\varepsilon\}
-\]
-
-我们希望证明结论$F(t_{j+1})\geq F(t_j)+\varepsilon$. 假设$F(t_{j+1})< F(t_j)+\varepsilon$，因为分布函数$F$的右连续性质（\ref{cdf}），所以$\exists\delta>0,F(t_{j+1}+\delta)<F_j+\varepsilon$，显然这和定义冲突。
-
-所以我们说明了在$t_{j}$和$t_{j+1}$之间，函数$F$的值至少跳跃$\varepsilon$. 由于我们限定了一个有限的$k$，所以该过程最多能够发生有限次，于是我们得到一个符合定义形式的分割。
-
-接下来证明$F(t_{j+1}^-)-F(t_j)\leq\varepsilon$. 注意到根据$t_{j+1}$的定义，$\forall\sigma>0,F(t_{j+1}-\sigma)<F(t_j)+\varepsilon$，该陈述符合$F(t^-_{j+1})$的定义，证毕。
-
-\noindent\textbf{主要证明}
-
-对一列次序统计量$Y_{(1)},Y_{(2)},Y_{(3)},\dots,Y_{(n)}$以及其对应的经验分布函数$F_n(x)$和真实的总体分布函数$F(x)$，不妨设
 
 
 \vfill
