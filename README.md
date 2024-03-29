@@ -14,7 +14,7 @@ Use at your own risk. The project is highly crude at this stage.
 - [ ] Rao-Blackwell Theorem
 - [ ] Lehman-Sheffé Theorem
 - [ ] 中心极限定理及其相关引理的证明 proof of the CLT and its lemma
-- [ ] 有关于独立和相关的定义 Definitions about independence and correlation
+- [x] 有关于独立和相关的定义 Definitions about independence and correlation
 - [x] 随机变量的线性组合的协方差的推广 Generalization of the covariance of the linear combination of random variables
 
 未完待续 TO BE CONTINUED
